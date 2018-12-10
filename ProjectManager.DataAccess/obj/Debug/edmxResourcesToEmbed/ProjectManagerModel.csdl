@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_project">
+    <Key>
+      <PropertyRef Name="Project_ID" />
+    </Key>
+    <Property Name="Project_ID" Type="Int32" Nullable="false" />
+    <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Start_Date" Type="DateTime" Precision="0" />
+    <Property Name="End_Date" Type="DateTime" Precision="0" />
+    <Property Name="Priority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_task" Relationship="ProjectManagerModel.FK_tbl_task_tbl_project" FromRole="tbl_project" ToRole="tbl_task" />
+    <NavigationProperty Name="tbl_users" Relationship="ProjectManagerModel.FK_tbl_users_tbl_project" FromRole="tbl_project" ToRole="tbl_users" />
+  </EntityType>
+  <EntityContainer Name="ProjectManagerConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_project" EntityType="Self.tbl_project" />
+    <EntitySet Name="tbl_task" EntityType="ProjectManagerModel.tbl_task" />
+    <AssociationSet Name="FK_tbl_task_tbl_project" Association="ProjectManagerModel.FK_tbl_task_tbl_project">
+      <End Role="tbl_project" EntitySet="tbl_project" />
+      <End Role="tbl_task" EntitySet="tbl_task" />
+    </AssociationSet>
+    <EntitySet Name="tbl_users" EntityType="ProjectManagerModel.tbl_users" />
+    <AssociationSet Name="FK_tbl_users_tbl_project" Association="ProjectManagerModel.FK_tbl_users_tbl_project">
+      <End Role="tbl_project" EntitySet="tbl_project" />
+      <End Role="tbl_users" EntitySet="tbl_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_users_tbl_task" Association="ProjectManagerModel.FK_tbl_users_tbl_task">
+      <End Role="tbl_task" EntitySet="tbl_task" />
+      <End Role="tbl_users" EntitySet="tbl_users" />
+    </AssociationSet>
+    <EntitySet Name="tbl_parent_task" EntityType="ProjectManagerModel.tbl_parent_task" />
+    <AssociationSet Name="FK_tbl_task_tbl_parent_task" Association="ProjectManagerModel.FK_tbl_task_tbl_parent_task">
+      <End Role="tbl_parent_task" EntitySet="tbl_parent_task" />
+      <End Role="tbl_task" EntitySet="tbl_task" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_task">
+    <Key>
+      <PropertyRef Name="task_id" />
+    </Key>
+    <Property Name="task_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="task" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="start_date" Type="DateTime" Precision="0" />
+    <Property Name="end_date" Type="DateTime" Precision="0" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_project" Relationship="ProjectManagerModel.FK_tbl_task_tbl_project" FromRole="tbl_task" ToRole="tbl_project" />
+    <NavigationProperty Name="tbl_users" Relationship="ProjectManagerModel.FK_tbl_users_tbl_task" FromRole="tbl_task" ToRole="tbl_users" />
+    <NavigationProperty Name="tbl_parent_task" Relationship="ProjectManagerModel.FK_tbl_task_tbl_parent_task" FromRole="tbl_task" ToRole="tbl_parent_task" />
+  </EntityType>
+  <Association Name="FK_tbl_task_tbl_project">
+    <End Type="ProjectManagerModel.tbl_project" Role="tbl_project" Multiplicity="0..1" />
+    <End Type="ProjectManagerModel.tbl_task" Role="tbl_task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_project">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="tbl_task">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_ID" Type="Int32" />
+    <Property Name="Project_ID" Type="Int32" />
+    <Property Name="Task_ID" Type="Int32" />
+    <NavigationProperty Name="tbl_project" Relationship="ProjectManagerModel.FK_tbl_users_tbl_project" FromRole="tbl_users" ToRole="tbl_project" />
+    <NavigationProperty Name="tbl_task" Relationship="ProjectManagerModel.FK_tbl_users_tbl_task" FromRole="tbl_users" ToRole="tbl_task" />
+  </EntityType>
+  <Association Name="FK_tbl_users_tbl_project">
+    <End Type="ProjectManagerModel.tbl_project" Role="tbl_project" Multiplicity="0..1" />
+    <End Type="ProjectManagerModel.tbl_users" Role="tbl_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_project">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="tbl_users">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_users_tbl_task">
+    <End Type="ProjectManagerModel.tbl_task" Role="tbl_task" Multiplicity="0..1" />
+    <End Type="ProjectManagerModel.tbl_users" Role="tbl_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_task">
+        <PropertyRef Name="task_id" />
+      </Principal>
+      <Dependent Role="tbl_users">
+        <PropertyRef Name="Task_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_parent_task">
+    <Key>
+      <PropertyRef Name="parent_id" />
+    </Key>
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_task" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_task" Relationship="ProjectManagerModel.FK_tbl_task_tbl_parent_task" FromRole="tbl_parent_task" ToRole="tbl_task" />
+  </EntityType>
+  <Association Name="FK_tbl_task_tbl_parent_task">
+    <End Type="ProjectManagerModel.tbl_parent_task" Role="tbl_parent_task" Multiplicity="0..1" />
+    <End Type="ProjectManagerModel.tbl_task" Role="tbl_task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_parent_task">
+        <PropertyRef Name="parent_id" />
+      </Principal>
+      <Dependent Role="tbl_task">
+        <PropertyRef Name="parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

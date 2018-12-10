@@ -1,0 +1,10 @@
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\ProjectManager.BusinessLogic.dll
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\ProjectManager.BusinessLogic.pdb
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\obj\Debug\ProjectManager.BusinessLogic.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\obj\Debug\ProjectManager.BusinessLogic.dll
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\obj\Debug\ProjectManager.BusinessLogic.pdb
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\ProjectManager.DataAccess.dll
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\EntityFramework.dll
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\ProjectManager.DataAccess.pdb
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\ProjectManager.DataAccess.dll.config
+c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.BusinessLogic\bin\Debug\EntityFramework.xml
