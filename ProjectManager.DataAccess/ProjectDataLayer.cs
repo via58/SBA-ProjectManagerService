@@ -4,22 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 
 namespace ProjectManager.DataAccess
 {
     public class ProjectDataLayer
     {
-        public List<tbl_project> GetProjectList()
+        public virtual List<SP_GETALLPROJECTSWITHTASK1_Result> GetProjectList()
         {
             using (ProjectManagerConnection dbContext = new ProjectManagerConnection())
             {
-                return dbContext.tbl_project
-                    .Include(x => x.tbl_task)
-                    .Include(y => y.tbl_users)
-                    .ToList();
+                //  var project = dbContext.GetProjects();
+                //return dbContext.tbl_project
+                //    .Include(x => x.tbl_task)
+                //    .Include(y => y.tbl_users)
+                //    .ToList();
+                return dbContext.SP_GETALLPROJECTSWITHTASK1().ToList();
             }
         }
-        public tbl_project GetProjectDetailsById(int projectId)
+        
+            
+            
+            public tbl_project GetProjectDetailsById(int projectId)
         {
             using (ProjectManagerConnection dbContext = new ProjectManagerConnection())
 
@@ -35,6 +41,7 @@ namespace ProjectManager.DataAccess
                 dbContext.tbl_project.Add(projectDetails);
                // dbContext.Entry(projectDetails).State = EntityState.Added;
                 dbContext.SaveChanges();
+                
 
             }
         }

@@ -9,7 +9,7 @@ namespace ProjectManager.BusinessLogic
 {
     public class Project
     {
-        public static List<tbl_project> GetAllprojects()
+        public static List<SP_GETALLPROJECTSWITHTASK1_Result> GetAllprojects()
         {
             ProjectDataLayer datalayer = new ProjectDataLayer();
             return datalayer.GetProjectList();

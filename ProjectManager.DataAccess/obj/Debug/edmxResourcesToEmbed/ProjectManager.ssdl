@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_parent_task">
+    <Key>
+      <PropertyRef Name="parent_id" />
+    </Key>
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="parent_task" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_project">
+    <Key>
+      <PropertyRef Name="Project_id" />
+    </Key>
+    <Property Name="Project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project" Type="varchar" MaxLength="50" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="End_Date" Type="date" />
+    <Property Name="Priority" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_task">
+    <Key>
+      <PropertyRef Name="task_id" />
+    </Key>
+    <Property Name="task_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="task" Type="varchar" MaxLength="50" />
+    <Property Name="start_date" Type="date" />
+    <Property Name="end_date" Type="date" />
+    <Property Name="priority" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Employee_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_task_tbl_parent_task">
+    <End Role="tbl_parent_task" Type="Self.tbl_parent_task" Multiplicity="0..1" />
+    <End Role="tbl_task" Type="Self.tbl_task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_parent_task">
+        <PropertyRef Name="parent_id" />
+      </Principal>
+      <Dependent Role="tbl_task">
+        <PropertyRef Name="parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_task_tbl_project">
+    <End Role="tbl_project" Type="Self.tbl_project" Multiplicity="0..1" />
+    <End Role="tbl_task" Type="Self.tbl_task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_project">
+        <PropertyRef Name="Project_id" />
+      </Principal>
+      <Dependent Role="tbl_task">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ap_ViewAllProjectsWithTasks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_AllProjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GETALLPROJECTSWITHTASK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GETALLTASKS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ProjectManagerModelStoreContainer">
+    <EntitySet Name="tbl_parent_task" EntityType="Self.tbl_parent_task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_project" EntityType="Self.tbl_project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_task" EntityType="Self.tbl_task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_users" EntityType="Self.tbl_users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_task_tbl_parent_task" Association="Self.FK_tbl_task_tbl_parent_task">
+      <End Role="tbl_parent_task" EntitySet="tbl_parent_task" />
+      <End Role="tbl_task" EntitySet="tbl_task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_task_tbl_project" Association="Self.FK_tbl_task_tbl_project">
+      <End Role="tbl_project" EntitySet="tbl_project" />
+      <End Role="tbl_task" EntitySet="tbl_task" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

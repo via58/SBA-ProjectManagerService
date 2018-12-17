@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectManagerModelStoreContainer" CdmEntityContainer="ProjectManagerConnection">
+    <EntitySetMapping Name="tbl_parent_task">
+      <EntityTypeMapping TypeName="ProjectManagerModel.tbl_parent_task">
+        <MappingFragment StoreEntitySet="tbl_parent_task">
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="parent_task" ColumnName="parent_task" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_project">
+      <EntityTypeMapping TypeName="ProjectManagerModel.tbl_project">
+        <MappingFragment StoreEntitySet="tbl_project">
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_task">
+      <EntityTypeMapping TypeName="ProjectManagerModel.tbl_task">
+        <MappingFragment StoreEntitySet="tbl_task">
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="task" ColumnName="task" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_users">
+      <EntityTypeMapping TypeName="ProjectManagerModel.tbl_users">
+        <MappingFragment StoreEntitySet="tbl_users">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_AllProjects" FunctionName="ProjectManagerModel.Store.sp_AllProjects">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.sp_AllProjects_Result">
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ap_ViewAllProjectsWithTasks" FunctionName="ProjectManagerModel.Store.ap_ViewAllProjectsWithTasks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.ap_ViewAllProjectsWithTasks_Result">
+          <ScalarProperty Name="NoOfTasks" ColumnName="NoOfTasks" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ap_ViewAllProjectsWithTasks1" FunctionName="ProjectManagerModel.Store.ap_ViewAllProjectsWithTasks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.ap_ViewAllProjectsWithTasks_Result">
+          <ScalarProperty Name="NoOfTasks" ColumnName="NoOfTasks" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETALLPROJECTSWITHTASK" FunctionName="ProjectManagerModel.Store.SP_GETALLPROJECTSWITHTASK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.SP_GETALLPROJECTSWITHTASK_Result">
+          <ScalarProperty Name="NoOfTasks" ColumnName="NoOfTasks" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="completed" ColumnName="completed" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETALLPROJECTSWITHTASK1" FunctionName="ProjectManagerModel.Store.SP_GETALLPROJECTSWITHTASK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.SP_GETALLPROJECTSWITHTASK1_Result">
+          <ScalarProperty Name="NoOfTasks" ColumnName="NoOfTasks" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="completed" ColumnName="completed" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETALLTASKS1" FunctionName="ProjectManagerModel.Store.SP_GETALLTASKS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerModel.SP_GETALLTASKS1_Result">
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="task" ColumnName="task" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="project" ColumnName="project" />
+          <ScalarProperty Name="parent_task" ColumnName="parent_task" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

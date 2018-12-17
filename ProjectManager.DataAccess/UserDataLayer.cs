@@ -14,10 +14,7 @@ namespace ProjectManager.DataAccess
         {
             using (dbContext = new ProjectManagerConnection())
             {
-                return dbContext.tbl_users
-                    .Include(x => x.tbl_task)
-                    .Include(y => y.tbl_project)
-                    .ToList();
+                return dbContext.tbl_users.ToList();
             }
         }
 

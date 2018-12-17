@@ -17,11 +17,6 @@ namespace ProjectManager.DataAccess
         public int User_ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Nullable<int> Employee_ID { get; set; }
-        public Nullable<int> Project_ID { get; set; }
-        public Nullable<int> Task_ID { get; set; }
-    
-        public virtual tbl_project tbl_project { get; set; }
-        public virtual tbl_task tbl_task { get; set; }
+        public int Employee_ID { get; set; }
     }
 }

@@ -11,19 +11,14 @@ namespace ProjectManager.DataAccess
     public class TasksDataLayer
     {
         ProjectManagerConnection dbContext;
-        public List<tbl_task> GetAllTasks()
+        public List<SP_GETALLTASKS1_Result> GetAllTasks()
         {
             using (dbContext = new ProjectManagerConnection())
             {
-                return dbContext.tbl_task
-                                .Include(x => x.tbl_parent_task)
-                                .Include(y => y.tbl_project)
-                                .Include(z => z.tbl_users)
-                                .ToList();
-
+                return dbContext.SP_GETALLTASKS1().ToList();
             }
         }
-
+       
         public tbl_task GetTask(int taskId)
         {
             using (dbContext = new ProjectManagerConnection())

@@ -14,12 +14,6 @@ namespace ProjectManager.DataAccess
     
     public partial class tbl_task
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_task()
-        {
-            this.tbl_users = new HashSet<tbl_users>();
-        }
-    
         public int task_id { get; set; }
         public Nullable<int> parent_id { get; set; }
         public Nullable<int> project_id { get; set; }
@@ -29,9 +23,7 @@ namespace ProjectManager.DataAccess
         public Nullable<int> priority { get; set; }
         public string status { get; set; }
     
-        public virtual tbl_project tbl_project { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_users> tbl_users { get; set; }
         public virtual tbl_parent_task tbl_parent_task { get; set; }
+        public virtual tbl_project tbl_project { get; set; }
     }
 }

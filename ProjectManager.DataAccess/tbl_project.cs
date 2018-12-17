@@ -18,10 +18,9 @@ namespace ProjectManager.DataAccess
         public tbl_project()
         {
             this.tbl_task = new HashSet<tbl_task>();
-            this.tbl_users = new HashSet<tbl_users>();
         }
     
-        public int Project_ID { get; set; }
+        public int Project_id { get; set; }
         public string Project { get; set; }
         public Nullable<System.DateTime> Start_Date { get; set; }
         public Nullable<System.DateTime> End_Date { get; set; }
@@ -29,7 +28,5 @@ namespace ProjectManager.DataAccess
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_task> tbl_task { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_users> tbl_users { get; set; }
     }
 }

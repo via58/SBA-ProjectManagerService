@@ -82,7 +82,7 @@ namespace ProjectManager.ServiceLayer.Controllers
             try
             {
                 users.CreateUser(newUserDetails);
-                return Ok("Project Added");
+                return Ok("User Added");
             }
             catch (Exception ex)
             {

@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProjectManager.DataAccess
 {
-    class ParentDataLayer
+    public class ParentDataLayer
     {
+        public List<tbl_parent_task> getAllParentTasks()
+        {
+            using (ProjectManagerConnection dbContext=new ProjectManagerConnection())
+            {
+                return dbContext.tbl_parent_task.ToList();
+            }
+            
+        }
     }
 }

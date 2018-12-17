@@ -1,5 +1,5 @@
-c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\bin\Debug\ProjectManager.PerformanceTest.dll
-c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\bin\Debug\ProjectManager.PerformanceTest.pdb
-c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\obj\Debug\ProjectManager.PerformanceTest.dll
-c:\users\admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\obj\Debug\ProjectManager.PerformanceTest.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\bin\Debug\ProjectManager.PerformanceTest.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\bin\Debug\ProjectManager.PerformanceTest.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\obj\Debug\ProjectManager.PerformanceTest.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\obj\Debug\ProjectManager.PerformanceTest.pdb
 C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.PerformanceTest\obj\Debug\ProjectManager.PerformanceTest.csprojResolveAssemblyReference.cache

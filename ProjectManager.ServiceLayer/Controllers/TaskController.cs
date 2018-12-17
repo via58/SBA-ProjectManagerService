@@ -47,7 +47,7 @@ namespace ProjectManager.ServiceLayer.Controllers
 
         // PUT: api/Task
         
-        public IHttpActionResult PutTaskDetail( int id,tbl_task taskDetail)
+        public IHttpActionResult PutTaskDetail( int id, tbl_task taskDetail)
         {
             if (!ModelState.IsValid)
             {

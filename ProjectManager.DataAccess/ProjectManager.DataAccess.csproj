@@ -49,36 +49,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ap_ViewAllProjectsWithTasks_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
     <Compile Include="ParentDataLayer.cs" />
     <Compile Include="ProjectDataLayer.cs" />
-    <Compile Include="ProjectManagerModel.Context.cs">
+    <Compile Include="ProjectManager.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectManagerModel.Context.tt</DependentUpon>
+      <DependentUpon>ProjectManager.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProjectManagerModel.cs">
+    <Compile Include="ProjectManager.cs" />
+    <Compile Include="ProjectManager.Designer.cs">
+      <DependentUpon>ProjectManager.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectManagerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProjectManagerModel.Designer.cs">
+    <Compile Include="ProjectManager1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectManagerModel.edmx</DependentUpon>
+      <DependentUpon>ProjectManager.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_AllProjects_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GETALLPROJECTSWITHTASK1_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GETALLPROJECTSWITHTASK_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GETALLTASKS1_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GETALLTASKS_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ViewAllProjectsWithNoOfTasks_Result.cs">
+      <DependentUpon>ProjectManager.tt</DependentUpon>
+    </Compile>
     <Compile Include="TasksDataLayer.cs" />
     <Compile Include="tbl_parent_task.cs">
-      <DependentUpon>ProjectManagerModel.tt</DependentUpon>
+      <DependentUpon>ProjectManager.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_project.cs">
-      <DependentUpon>ProjectManagerModel.tt</DependentUpon>
+      <DependentUpon>ProjectManager.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_task.cs">
-      <DependentUpon>ProjectManagerModel.tt</DependentUpon>
+      <DependentUpon>ProjectManager.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_users.cs">
-      <DependentUpon>ProjectManagerModel.tt</DependentUpon>
+      <DependentUpon>ProjectManager.tt</DependentUpon>
     </Compile>
     <Compile Include="UserDataLayer.cs" />
   </ItemGroup>
@@ -87,27 +109,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="ProjectManagerModel.edmx">
+    <EntityDeploy Include="ProjectManager.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjectManagerModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProjectManager.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProjectManagerModel.edmx.diagram">
-      <DependentUpon>ProjectManagerModel.edmx</DependentUpon>
+    <None Include="ProjectManager.edmx.diagram">
+      <DependentUpon>ProjectManager.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectManagerModel.Context.tt">
+    <Content Include="ProjectManager.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectManagerModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectManagerModel.Context.cs</LastGenOutput>
+      <DependentUpon>ProjectManager.edmx</DependentUpon>
+      <LastGenOutput>ProjectManager.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ProjectManagerModel.tt">
+    <Content Include="ProjectManager.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectManagerModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectManagerModel.cs</LastGenOutput>
+      <DependentUpon>ProjectManager.edmx</DependentUpon>
+      <LastGenOutput>ProjectManager1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

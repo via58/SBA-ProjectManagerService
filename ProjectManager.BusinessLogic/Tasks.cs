@@ -11,7 +11,7 @@ namespace ProjectManager.BusinessLogic
     public class Tasks
     {
         TasksDataLayer datalayer = new TasksDataLayer();
-        public List<tbl_task> getAllTasks()
+        public List<SP_GETALLTASKS1_Result> getAllTasks()
         {
             try
             {

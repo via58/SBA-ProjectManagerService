@@ -58,7 +58,7 @@ namespace ProjectManager.ServiceLayer.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != projectDetails.Project_ID)
+            if (id != projectDetails.Project_id)
             {
                 return BadRequest();
             }
