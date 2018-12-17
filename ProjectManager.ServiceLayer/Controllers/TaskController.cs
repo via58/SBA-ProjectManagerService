@@ -14,7 +14,7 @@ namespace ProjectManager.ServiceLayer.Controllers
     {
         Tasks task = new Tasks();
         // GET: api/Task
-        public IHttpActionResult GetAllUsers()
+        public IHttpActionResult GetAllTasks()
         {
             try
             {
@@ -30,7 +30,7 @@ namespace ProjectManager.ServiceLayer.Controllers
 
         // POST: api/Task
 
-        public IHttpActionResult PostUser(tbl_task newTaskDetails)
+        public IHttpActionResult PostTask(tbl_task newTaskDetails)
         {
             try
             {
