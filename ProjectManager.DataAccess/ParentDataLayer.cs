@@ -10,7 +10,6 @@ namespace ProjectManager.DataAccess
     {
         public List<tbl_parent_task> getAllParentTasks()
         {
-            
             using (ProjectManagerConnection dbContext=new ProjectManagerConnection())
             {
                 return dbContext.tbl_parent_task.ToList();

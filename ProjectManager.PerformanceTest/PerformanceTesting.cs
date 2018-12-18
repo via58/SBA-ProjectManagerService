@@ -26,7 +26,7 @@ namespace ProjectManager.PerformanceTest
         }
 
         [PerfBenchmark(Description = "MemoryTEST",
-NumberOfIterations = 5, RunMode = RunMode.Throughput, RunTimeMilliseconds = 2500, TestMode = TestMode.Test)]
+NumberOfIterations = 3, RunMode = RunMode.Throughput, RunTimeMilliseconds = 5000, TestMode = TestMode.Test)]
         [MemoryAssertion(MemoryMetric.TotalBytesAllocated, MustBe.LessThanOrEqualTo, ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_Memory()
         {

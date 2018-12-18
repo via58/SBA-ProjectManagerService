@@ -71,6 +71,7 @@
     <Compile Include="ProjectControllerTesting.cs" />
     <Compile Include="TaskControllerTesting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControllerTesting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
