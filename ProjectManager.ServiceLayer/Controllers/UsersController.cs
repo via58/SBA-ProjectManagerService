@@ -107,8 +107,6 @@ namespace ProjectManager.ServiceLayer.Controllers
 
             }
         }
-
-
         protected override void Dispose(bool disposing)
         {
             ProjectManagerConnection db = new ProjectManagerConnection();

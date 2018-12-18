@@ -1,0 +1,77 @@
+Executing Benchmarks in C:\Users\Admin\Documents\GitHub\SBA-ProjectManagerService\ProjectManager.PerformanceTest\bin\Debug\ProjectManager.PerformanceTest.dll
+------------ STARTING ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_ElaspedTime ---------- 
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:01.0185258
+Elapsed Time - ms: 1,018.00 ,ms: /s 999.48 , ns / ms: 1,000,516.50
+--------------- END RUN ---------------
+
+--------------- RESULTS: ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_ElaspedTime ---------------
+--------------- DATA ---------------
+Elapsed Time: Max: 1,018.00 ms, Average: 1,018.00 ms, Min: 1,018.00 ms, StdDev: 0.00 ms
+Elapsed Time: Max / s: 999.48 ms, Average / s: 999.48 ms, Min / s: 999.48 ms, StdDev / s: 0.00 ms
+
+--------------- ASSERTIONS ---------------
+[PASS] Expected Elapsed Time to must be less than or equal to 5,000.00 ms; actual value was 1,018.00 ms.
+
+------------ FINISHED ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_ElaspedTime ---------- 
+------------ STARTING ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_Memory ---------- 
+--------------- BEGIN WARMUP ---------------
+Elapsed: 00:00:01.0198469
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,891.68 , ns / bytes: 101,095.05
+--------------- END WARMUP ---------------
+
+--------------- BEGIN WARMUP ---------------
+Elapsed: 00:00:01.0188356
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,901.50 , ns / bytes: 100,994.81
+--------------- END WARMUP ---------------
+
+--------------- BEGIN WARMUP ---------------
+Elapsed: 00:00:00.9966480
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 10,121.93 , ns / bytes: 98,795.40
+--------------- END WARMUP ---------------
+
+--------------- BEGIN WARMUP ---------------
+Elapsed: 00:00:01.0096679
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,991.40 , ns / bytes: 100,086.03
+--------------- END WARMUP ---------------
+
+--------------- BEGIN WARMUP ---------------
+Elapsed: 00:00:01.0037642
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 10,050.17 , ns / bytes: 99,500.81
+--------------- END WARMUP ---------------
+
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:01.0055209
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 10,032.61 , ns / bytes: 99,674.95
+--------------- END RUN ---------------
+
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:00.9940763
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 10,148.11 , ns / bytes: 98,540.47
+--------------- END RUN ---------------
+
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:01.0172025
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,917.40 , ns / bytes: 100,832.92
+--------------- END RUN ---------------
+
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:01.0362005
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,735.57 , ns / bytes: 102,716.15
+--------------- END RUN ---------------
+
+--------------- BEGIN RUN ---------------
+Elapsed: 00:00:01.0093547
+TotalBytesAllocated - bytes: 10,088.00 ,bytes: /s 9,994.50 , ns / bytes: 100,054.99
+--------------- END RUN ---------------
+
+--------------- RESULTS: ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_Memory ---------------
+MemoryTEST
+--------------- DATA ---------------
+TotalBytesAllocated: Max: 10,088.00 bytes, Average: 10,088.00 bytes, Min: 10,088.00 bytes, StdDev: 0.00 bytes
+TotalBytesAllocated: Max / s: 10,148.11 bytes, Average / s: 9,965.64 bytes, Min / s: 9,735.57 bytes, StdDev / s: 153.20 bytes
+
+--------------- ASSERTIONS ---------------
+[PASS] Expected TotalBytesAllocated to must be less than or equal to 65,536.00 bytes; actual value was 10,088.00 bytes.
+
+------------ FINISHED ProjectManager.PerformanceTest.PerformanceTesting+Benchmark_Performance_Memory ---------- 

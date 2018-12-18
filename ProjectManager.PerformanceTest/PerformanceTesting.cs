@@ -26,16 +26,19 @@ namespace ProjectManager.PerformanceTest
         }
 
         [PerfBenchmark(Description = "MemoryTEST",
-NumberOfIterations = 3, RunMode = RunMode.Throughput, RunTimeMilliseconds = 5000, TestMode = TestMode.Test)]
+NumberOfIterations = 5, RunMode = RunMode.Throughput, RunTimeMilliseconds = 2500, TestMode = TestMode.Test)]
         [MemoryAssertion(MemoryMetric.TotalBytesAllocated, MustBe.LessThanOrEqualTo, ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_Memory()
         {
-            var controller = new TaskController();
-            controller.Request = new HttpRequestMessage()
+            using (var controller = new TaskController())
             {
-                RequestUri = new Uri("http://localhost")
-            };
-            controller.GetAllTasks();
+                controller.Request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri("http://localhost")
+                };
+                controller.GetAllTasks();
+
+            }
         }
     }
 }

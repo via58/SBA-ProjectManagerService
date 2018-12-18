@@ -10,21 +10,26 @@ using ProjectManager.DataAccess;
 namespace ProjectManager.ServiceLayer.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class TaskController : ApiController
+    public class TaskController : ApiController, IDisposable
     {
         Tasks task = new Tasks();
         // GET: api/Task
         public IHttpActionResult GetAllTasks()
-        {
+        { List<SP_GETALLTASKS1_Result> response;
             try
             {
-                var response = task.getAllTasks();
+                 response = task.getAllTasks();
                 if (response != null) return Ok(response);
                 else return NotFound();
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
             }
         }
 
@@ -46,8 +51,8 @@ namespace ProjectManager.ServiceLayer.Controllers
         }
 
         // PUT: api/Task
-        
-        public IHttpActionResult PutTaskDetail( int id, tbl_task taskDetail)
+
+        public IHttpActionResult PutTaskDetail(int id, tbl_task taskDetail)
         {
             if (!ModelState.IsValid)
             {
@@ -72,6 +77,10 @@ namespace ProjectManager.ServiceLayer.Controllers
             }
 
 
+        }
+        protected void Dispose()
+        {
+            
         }
         protected override void Dispose(bool disposing)
         {
