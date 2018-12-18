@@ -7,3 +7,4 @@ C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogi
 C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.DataAccess\obj\Debug\ProjectManager.DataAccess.dll
 C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.DataAccess\obj\Debug\ProjectManager.DataAccess.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\ProjectManager.BusinessLogic\ProjectManager.DataAccess\obj\Debug\ProjectManager.DataAccess.csprojResolveAssemblyReference.cache
