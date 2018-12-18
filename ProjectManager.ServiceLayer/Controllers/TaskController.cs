@@ -73,6 +73,15 @@ namespace ProjectManager.ServiceLayer.Controllers
 
 
         }
+        protected override void Dispose(bool disposing)
+        {
+            ProjectManagerConnection db = new ProjectManagerConnection();
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
 
     }
